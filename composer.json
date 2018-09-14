@@ -12,7 +12,8 @@
         "drupal/entity": "1.0-beta3",
         "drupal/config_update": "1.x-dev",
         "bower-asset/json-forms": "1.6.3",
-        "drupal/group": "1.x-dev"
+        "drupal/group": "1.x-dev",
+        "drupal/bootstrap": "3.13"
     },
     "require-dev": {
       "burdamagazinorg/thunder-dev-tools": "dev-master",
