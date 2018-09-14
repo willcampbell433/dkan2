@@ -8,9 +8,10 @@ const log = (type) => console.log.bind(console, type);
 Drupal.behaviors.jsonSchemaForm = {
   attach: function (context, settings) {
     var schema = JSON.parse(settings.schema);
+    var uiSchema = JSON.parse(settings.uiSchema);
     console.log(schema);
     render((
-      <Form id="jsonschema-form" schema={schema}>
+      <Form id="jsonschema-form" schema={schema} uiSchema={uiSchema}>
         <div><button type="submit">Validate</button></div>
       </Form>
     ), document.getElementById("json-schema-field"));

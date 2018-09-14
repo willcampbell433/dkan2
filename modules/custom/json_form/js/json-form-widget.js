@@ -80,7 +80,7 @@
   function buildJsonForm(identifier, config) {
     var BrutusinForms = brutusin["json-forms"];
     var container = document.getElementById(identifier);
-    
+
     var jsonform = BrutusinForms.create(config.schema);
     var initialValue = $(config.textarea).val();
     jsonform.render(container, JSON.parse(initialValue));

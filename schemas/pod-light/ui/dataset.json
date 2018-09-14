@@ -1,0 +1,40 @@
+{
+	"description": {
+		"ui:widget": "textarea"
+	},
+	"identifier": {
+		"ui:placeholder": "This will be computed from the title if not provided"
+	},
+	"@type": {
+		"ui:widget": "hidden"
+	},
+	"contactPoint": {
+		"items": {
+			"@type": {
+				"ui:widget": "hidden"
+			}
+		}
+	},
+	"ui:order": [
+		"@type",
+		"title",
+		"identifier",
+		"description",
+		"distribution",
+		"keyword",
+		"theme",
+		"accessLevel",
+		"accrualPeriodicity",
+		"describedBy",
+		"describedByType",
+		"contactPoint",
+		"publisher",
+		"references",
+		"spatial",
+		"temporal",
+		"license",
+		"isPartOf",
+		"issued",
+		"modified"
+	]
+}

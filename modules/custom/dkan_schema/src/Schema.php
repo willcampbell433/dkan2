@@ -51,6 +51,10 @@ class Schema {
     return $this->loadSchemaFile($collection);
   }
 
+  public function loadUiSchema($collection) {
+    return $this->loadUiSchemaFile($collection);
+  }
+
   public function prepareForForm($collection) {
     $schema = json_decode(file_get_contents($this->dir() . '/collections/' . $collection . '.json'));
     $references = $this->config['references'];
@@ -66,6 +70,10 @@ class Schema {
 
   private function loadSchemaFile($collection) {
     return Json::decode(file_get_contents($this->dir() . '/collections/' . $collection . '.json'));
+  }
+
+  private function loadUiSchemaFile($collection) {
+    return Json::decode(file_get_contents($this->dir() . '/ui/' . $collection . '.json'));
   }
 
   public function loadFullSchema() {
