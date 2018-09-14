@@ -1,0 +1,4 @@
+/* Hide json form widget */
+.form-textarea-wrapper #json-schema-field-hidden {
+  display: none;
+}

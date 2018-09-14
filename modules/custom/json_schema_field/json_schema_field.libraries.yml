@@ -1,0 +1,6 @@
+json_schema_field:
+  js:
+    js/json_schema_field.bundle.js: {}
+  css:
+    layout:
+      css/json_schema_field.css: {}
