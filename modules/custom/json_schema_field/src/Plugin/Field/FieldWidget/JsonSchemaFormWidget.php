@@ -116,6 +116,8 @@ JSON;
    */
   public function validate($element, FormStateInterface $form_state) {
     $value = $element['#value'];
+    ksm('h');
+    ksm($value);
     if (strlen($value) == 0) {
       $form_state->setValueForElement($element, '');
       return;
