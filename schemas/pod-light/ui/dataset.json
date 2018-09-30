@@ -5,22 +5,34 @@
 	"identifier": {
 		"ui:placeholder": "This will be computed from the title if not provided"
 	},
-	"@type": {
+  "@type": {
 		"ui:widget": "hidden"
 	},
-	"contactPoint": {
-		"items": {
-			"@type": {
-				"ui:widget": "hidden"
-			}
-		}
+  "modified": {
+		"ui:widget": "hidden"
 	},
+  "distribution": {
+    "items": {
+      "@type": {
+        "ui:widget": "hidden"
+      },
+      "schema": {
+        "fields": {
+          "ui:title": "Fields"
+        }
+      }
+    }
+  },
+  "contactPoint": {
+    "@type": {
+      "ui:widget": "hidden"
+    }
+  },
 	"ui:order": [
 		"@type",
 		"title",
 		"identifier",
 		"description",
-		"distribution",
 		"keyword",
 		"theme",
 		"accessLevel",
@@ -35,6 +47,7 @@
 		"license",
 		"isPartOf",
 		"issued",
+    "distribution",
 		"modified"
 	]
 }
