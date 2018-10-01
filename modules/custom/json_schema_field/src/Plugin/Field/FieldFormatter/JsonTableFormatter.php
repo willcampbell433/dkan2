@@ -25,12 +25,10 @@ class JsonTableFormatter extends FormatterBase {
    */
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $schema = json_decode($this->getSetting('json_schema'));
-    // ksm($this->getSettings());
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      $metadata = (array) json_decode($item->value);
-
+      $metadata = json_decode($item->value, true);
       $metadataTable = [
         '#type' => 'table',
         '#caption' => t('Metadata'),
@@ -40,7 +38,6 @@ class JsonTableFormatter extends FormatterBase {
       }
 
       $elements[$delta]['metadata_table'] = $metadataTable;
-      $elements[$delta]['metadata_table2'] = $metadataTable;
     }
     return $elements;
   }
