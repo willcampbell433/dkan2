@@ -28,20 +28,27 @@ class JsonSchemaFormWidget extends WidgetBase {
   public function formElement(FieldItemListInterface $items, $delta, array $element, array &$form, FormStateInterface $form_state) {
     $value = isset($items[$delta]->value) ? $items[$delta]->value : '';
     $schema = new Schema();
-    $bundle = $form_state->getFormObject()->getEntity()->bundle();
+
+    $entity = $form_state->getFormObject()->getEntity();
+    $bundle = $entity->bundle();
+    $data = $entity->get('field_json_metadata')->value;
     $formSchema = json_encode($schema->prepareForForm($bundle));
     $uiSchema = json_encode($schema->loadUiSchema($bundle));
+
     $element += [
       '#type' => 'textarea',
       '#suffix' => '<div id="json-schema-field"></div>',
       '#id' => 'json-schema-field-hidden',
       '#attached' => [
         'library' => ['json_schema_field/json_schema_field'],
-        'drupalSettings' => ['schema' => $formSchema, 'uiSchema' => $uiSchema],
+        'drupalSettings' => [
+          'schema' => $formSchema,
+          'uiSchema' => $uiSchema,
+          'data' => $data,
+        ],
       ],
       '#default_value' => $value,
       '#size' => 7,
-      '#maxlength' => 7,
       '#element_validate' => [
         [$this, 'validate'],
       ],
