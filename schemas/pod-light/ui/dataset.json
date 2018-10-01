@@ -3,13 +3,18 @@
 		"ui:widget": "textarea"
 	},
 	"identifier": {
-		"ui:placeholder": "This will be computed from the title if not provided"
+		"ui:widget": "hidden"
 	},
   "@type": {
 		"ui:widget": "hidden"
 	},
   "modified": {
 		"ui:widget": "hidden"
+	},
+	"references": {
+		"items": {
+			"ui:placeholder": "Enter a URL"
+		}
 	},
   "distribution": {
     "items": {
